@@ -1,15 +1,25 @@
 module.exports = chirp;
 
-var chirping = [];
-
 function chirp(n){
   if (typeof n !== 'number'){
-    return "must pass a number through the second parameter";
+    console.log("must pass a number through the function");
+    return null;
   }
-  if(n > 0){
-    chirping.push("chirp");
-    n--;
-    return chirp(n);
+
+  if (n <= 0) {
+    console.log("must pass a positive integer through the function");
+    return null;
   }
-  return chirping.join(" ");
+
+  var chirpArr = [];
+  return chirping(n);
+
+  function chirping(n){
+    if(n > 0){
+      chirpArr.push("chirp");
+      n--;
+      return chirping(n);
+    }
+    return chirpArr.join(" ");
+  }
 }

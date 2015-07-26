@@ -21,8 +21,19 @@ describe ("chirp", function(){
 
   //Passing a data type that is not a number should return an error
 
-  // it('should only take a number as a parameter', function(){
-  //   expect(chirp('cat')).to.
-  // });
+  it('should only take a number as a parameter', function(){
+    expect(chirp('cat')).to.equal(null);
+    expect(chirp(true)).to.equal(null);
+    expect(chirp({})).to.equal(null);
+    expect(chirp([2, 3, 1])).to.equal(null);
+    expect(chirp()).to.equal(null);
+  });
+
+  //Passing a number that is negatve or zero should return an error
+
+  it('should only take a positive number as a parameter', function(){
+    expect(chirp(-1)).to.equal(null);
+    expect(chirp(0)).to.equal(null);
+  })
 
 });
