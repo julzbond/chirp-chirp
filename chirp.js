@@ -7,7 +7,12 @@ function chirp(n){
   }
 
   if (n <= 0) {
-    console.log("must pass a positive integer through the function");
+    console.log("must pass a positive number through the function");
+    return null;
+  }
+
+  if (n !== parseInt(n)){
+    console.log("must pass an integer through the function");
     return null;
   }
 
