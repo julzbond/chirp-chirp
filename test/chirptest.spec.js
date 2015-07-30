@@ -41,6 +41,6 @@ describe ("chirp", function(){
   it('should only take integers as a parameter', function(){
     expect(chirp(1.2)).to.equal(null);
     expect(chirp(0.123)).to.equal(null);
-  })
+  });
 
 });
